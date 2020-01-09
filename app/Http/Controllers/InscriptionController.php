@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\inscription;
+use App\Models\Inscription;
 use Illuminate\Http\Request;
 
 class InscriptionController extends Controller
@@ -41,10 +41,10 @@ class InscriptionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\inscription  $inscription
+     * @param  \use App\Models\Inscription  $inscription
      * @return \Illuminate\Http\Response
      */
-    public function show(inscription $inscription)
+    public function show(Inscription $inscription)
     {
         //
     }
@@ -52,10 +52,10 @@ class InscriptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\inscription  $inscription
+     * @param  \use App\Models\Inscription  $inscription
      * @return \Illuminate\Http\Response
      */
-    public function edit(inscription $inscription)
+    public function edit(Inscription $inscription)
     {
         //
     }
@@ -64,10 +64,10 @@ class InscriptionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\inscription  $inscription
+     * @param  \use App\Models\Inscription  $inscription
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, inscription $inscription)
+    public function update(Request $request, Inscription $inscription)
     {
         //
     }
@@ -75,10 +75,10 @@ class InscriptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\inscription  $inscription
+     * @param  \use App\Models\Inscription  $inscription
      * @return \Illuminate\Http\Response
      */
-    public function destroy(inscription $inscription)
+    public function destroy(Inscription $inscription)
     {
         //
     }
