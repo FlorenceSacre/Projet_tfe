@@ -17,3 +17,5 @@ Route::get('/', function () {
 Route::resource('inscription','InscriptionController');
 
 Route::resource('accueil','AccueilController');
+
+Route::resource('video','VideoController');
