@@ -111,3 +111,24 @@ nav a:hover, nav a.current {
 .index iframe.one {
     margin-left: 20px;
 }
+
+/* --------------- Video --------------- */
+
+.video iframe {
+    width: 400px;
+    height: 300px;
+    float: left;
+    margin: 50px 0 0 80px;
+}
+.video #description {
+    float: left;
+    margin: 100px 0 0 40px;
+}
+
+.video #description .description {
+    width: 400px;
+}
+.video #download {
+    clear: both;
+    margin-left: 100px;
+}
