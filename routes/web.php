@@ -14,8 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('inscription','InscriptionController');
 
 Route::resource('accueil','AccueilController');
 
 Route::resource('video','VideoController');
+
+Auth::routes();
+Route::get('/connexion', 'ConnexionController@index')->name('connexion');
+Route::get('email', 'EmailController@getForm');
+Route::post('email', ['uses' => 'EmailController@postForm', 'as' => 'storeEmail']);
+
+Route::resource('user', 'UserController');

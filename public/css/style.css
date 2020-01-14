@@ -132,3 +132,33 @@ nav a:hover, nav a.current {
     clear: both;
     margin-left: 100px;
 }
+
+/* --------------- Admin --------------- */
+
+.admin {
+    width: 1280px;
+    background-color: #CFD8B0;
+}
+.admin #container {
+    margin-left: 496px;
+}
+.admin h2 {
+    color: #3D5C26;
+    padding: 30px 0 24px 34px;
+}
+.admin ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.admin li {
+    width: 280px;
+    margin-bottom: 5px;
+    background-color: #8A956E;
+}
+.admin a {
+    padding: 10px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}

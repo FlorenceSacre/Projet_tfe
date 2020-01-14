@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\video;
 use Illuminate\Http\Request;
 
 class AccueilController extends Controller
@@ -41,10 +40,10 @@ class AccueilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\video  $video
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(video $video)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class AccueilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\video  $video
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(video $video)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class AccueilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\video  $video
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, video $video)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class AccueilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\video  $video
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(video $video)
+    public function destroy($id)
     {
         //
     }
