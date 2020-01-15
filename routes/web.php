@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('accueil','AccueilController');
+Route::resource('home','HomeController');
 
 Route::resource('video','VideoController');
 

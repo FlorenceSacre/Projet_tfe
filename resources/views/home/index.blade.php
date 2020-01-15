@@ -79,8 +79,8 @@
                     <!--<h1 id="logo-florence-sacré"><a href="index.html">Florence Sacré</a></h1>-->
                     <nav>
                         <ul>
-                            <li><a href="{{URL::to('/login')}}">Connexion</a></li>
-                            <li><a href="{{URL::to('/register')}}">Inscription</a></li>
+                            <li><a href="{{URL('/login')}}">Connexion</a></li>
+                            <li><a href="{{URL('/register')}}">Inscription</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </nav>
@@ -92,22 +92,17 @@
             <div id="content">
                 <nav class="categorie">
                     <ul>
-                        <li><a href="#">Catégorie</a></li>
-                        <li><a href="#">Catégorie</a></li>
-                        <li><a href="#">Catégorie</a></li>
-                        <li><a href="#">Catégorie</a></li>
+                        <li><a href="#">Voyage</a></li>
+                        <li><a href="#">Animaux</a></li>
+                        <li><a href="#">Urbex</a></li>
+                        <li><a href="#">Hiver</a></li>
                     </ul>
                 </nav>
                 <section>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
-                    <iframe width="500" src="https://player.vimeo.com/video/327966481"></iframe>
+                    <a href="{{URL('video')}}"><img width="380px" alt="#" src="{{asset('images/unsplash.jpg')}}" /></a>
+                    <a href="{{URL('video')}}"><img width="380px" alt="#" src="{{asset('images/pexels.jpg')}}" /></a>
+                    <a href="{{URL('video')}}"><img width="380px" alt="#" src="{{asset('images/publicdomainarchive.jpg')}}" /></a>
+                    <a href="{{URL('video')}}"><img width="380px" alt="#" src="{{asset('images/morguefile.jpg')}}" /></a>
                 </section>
             </div><!-- end content -->
         </div><!-- end container -->
