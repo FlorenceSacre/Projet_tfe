@@ -73,7 +73,7 @@
         </script>
     </head>
     <body class="video">
-        <div id="container">
+        <div class="container-lg">
             <header>
                 <div id="topbar">
                     <!--<h1 id="logo-florence-sacré"><a href="index.html">Florence Sacré</a></h1>-->
@@ -88,13 +88,15 @@
             </header>
             <div id="content">
                 <iframe src="https://player.vimeo.com/video/327966481"></iframe>
-                <section id="description">
+                <section id="informations">
                     <p>Titre : Jelly-o candy dragée</p>
-                    <p class="description">Description : Jelly-o candy dragée powder donut caramels dessert danish sesame snaps. Wafer croissant muffin marzipan gummi bears. Caramels chupa chups dessert ice cream oat cake. Liquorice marzipan pie. Topping cupcake cake tootsie roll caramels candy canes dragée apple pie tootsie roll. Marshmallow topping pastry cake cheesecake. Dessert icing oat cake toffee croissant lemon drops sweet macaroon. Lemon drops oat cake dessert oat cake pie halvah croissant.</p>
+                    <p class="description">Description : Jelly-o candy dragée powder donut caramels dessert danish sesame snaps. Wafer croissant muffin marzipan gummi bears. Caramels chupa chups dessert ice cream oat cake. Liquorice marzipan pie. Topping cupcake cake tootsie roll caramels candy canes dragée apple pie tootsie roll.</p>
                     <p>Durée : 02:10</p>
                     <p>Résolution : 720 * 480</p>
                     <p>Taille : 30 MB</p>
                     <p>Ratio vidéo : 16/9</p>
+                    <p>Format : MP4</p>
+                    <p>Frame Rate : 30 fps</p>
                 </section>
                 <section id="download">
                     <a href="#">Téléchargement</a>
