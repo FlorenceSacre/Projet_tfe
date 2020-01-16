@@ -92,7 +92,7 @@
             <div id="content">
                 <nav class="categorie">
                     <ul>
-                        <li><a href="#">Voyage</a></li>
+                        <li><a href="{{URL('voyage')}}">Voyage</a></li>
                         <li><a href="#">Animaux</a></li>
                         <li><a href="#">Urbex</a></li>
                         <li><a href="#">Hiver</a></li>
