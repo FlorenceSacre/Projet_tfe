@@ -16,7 +16,6 @@ class CreateEmailsTable extends Migration
         Schema::create('emails', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('email', 100);
-            $table->timestamps();
         });
     }
 

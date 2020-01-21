@@ -1,4 +1,4 @@
-@extends('style.master')
+@extends('style.template')
 
 @section('content')
     <br>
