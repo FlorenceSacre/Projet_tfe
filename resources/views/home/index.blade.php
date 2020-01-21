@@ -79,8 +79,8 @@
                     <!--<h1 id="logo-florence-sacré"><a href="index.html">Florence Sacré</a></h1>-->
                     <nav>
                         <ul>
-                            <li><a href="{{URL('/login')}}">Connexion</a></li>
-                            <li><a href="{{URL('/register')}}">Inscription</a></li>
+                            <li><a href="{{URL('../login')}}">Connexion</a></li>
+                            <li><a href="{{URL('../register')}}">Inscription</a></li>
                             <li><a href="#">Contact</a></li>
                         </ul>
                     </nav>
