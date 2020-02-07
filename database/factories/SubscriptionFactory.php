@@ -1,0 +1,15 @@
+<?php
+
+/** @var \Illuminate\Database\Eloquent\Factory $factory */
+
+use App\Models\Subscription;
+use Faker\Generator as Faker;
+
+$factory->define(Subscription::class, function (Faker $faker) {
+    return [
+        'name' => $faker->word(),
+        'description' => $faker->text(),
+        //'start_date' => Carbon::now(),
+        //'stop_date' => $faker->randomElement([$faker_end, null]),
+    ];
+});
