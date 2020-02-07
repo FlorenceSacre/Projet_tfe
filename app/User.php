@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Subscription;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -15,9 +16,10 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'users';
     protected $fillable = [
-        'name', 'email', 'password', 'admin'
-    ];
+        'username', 'lastname', 'firstname', 'gender', 'birthday', 'postal_code', 'city', 'country', 'email', 'password', 'role', 'admin',
+        ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -36,8 +38,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public $timestamps = false;
+
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+    public function subscription() {
+        return $this->belongsTo(Subscription::class);
     }
 }

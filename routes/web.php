@@ -22,7 +22,7 @@ Route::resource('video','VideoController');
 Route::resource('voyage','VoyageController');
 
 Auth::routes();
-Route::get('/connexion', 'ConnexionController@index')->name('connexion');
+//Route::get('/connexion', 'ConnexionController@index')->name('connexion');
 Route::get('email', 'EmailController@getForm');
 Route::post('email', ['uses' => 'EmailController@postForm', 'as' => 'storeEmail']);
 
