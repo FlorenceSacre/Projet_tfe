@@ -97,6 +97,25 @@
                     <p>Ratio vidéo : 16/9</p>
                     <p>Format : MP4</p>
                     <p>Frame Rate : 30 fps</p>
+
+                    <?php
+                    $titre = DB::table('video')->select(DB::raw('titre'))->where('id_video', 1)->get();
+                    echo $titre . "<br />";
+                    $description = DB::table('video')->select(DB::raw('description'))->where('id_video', 1)->get();
+                    echo $description . "<br />";
+                    $resolution = DB::table('video')->select(DB::raw('resolution'))->where('id_video', 1)->get();
+                    echo $resolution . "<br />";
+                    $format_video = DB::table('video')->select(DB::raw('format_video'))->where('id_video', 1)->get();
+                    echo $format_video . "<br />";
+                    $frame_rate = DB::table('video')->select(DB::raw('frame_rate'))->where('id_video', 1)->get();
+                    echo $frame_rate . "<br />";
+                    $taille = DB::table('video')->select(DB::raw('taille'))->where('id_video', 1)->get();
+                    echo $taille . "<br />";
+                    $ratio_video = DB::table('video')->select(DB::raw('ratio_video'))->where('id_video', 1)->get();
+                    echo $ratio_video . "<br />";
+                    $video = DB::table('video')->select(DB::raw('video'))->where('id_video', 1)->get();
+                    echo $video;
+                    ?>
                 </section>
                 <section id="download">
                     <a href="#">Téléchargement</a>

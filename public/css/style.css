@@ -132,6 +132,9 @@ nav a:hover, nav a.current {
     clear: both;
     margin-left: 100px;
 }
+.video p {
+    margin-top: 60px;
+}
 
 /* --------------- Admin --------------- */
 
