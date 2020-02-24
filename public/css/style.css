@@ -165,3 +165,8 @@ nav a:hover, nav a.current {
     color: #fff;
     text-decoration: none;
 }
+
+
+.col-sm-offset-8 col-sm-8{
+    margin-left: 19%;
+}

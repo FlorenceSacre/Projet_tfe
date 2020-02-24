@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('username');
             $table->string('lastname');
             $table->string('firstname');
-            $table->string('gender');
+            $table->enum('gender',['male', 'female'];
             $table->date('birthday');
             $table->string('postal_code');
             $table->string('city');
@@ -30,7 +30,6 @@ class CreateUsersTable extends Migration
             $table->boolean('admin')->default(false);
             $table->rememberToken();
             $table->timestamps(); //create_at et update_at
-            // $table->bigInteger('id_subscription')->unsigned();
 
             $table->bigInteger('subscription_id')
                   ->unsigned()
