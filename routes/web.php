@@ -27,3 +27,11 @@ Route::get('email', 'EmailController@getForm');
 Route::post('email', ['uses' => 'EmailController@postForm', 'as' => 'storeEmail']);
 
 Route::resource('user', 'UserController');
+
+Route::get('/payment', function() {
+    return view('payment.index');
+});
+Route::post('/subscription', 'SubscriptionController');
+Route::get('emails.new-subscription');
+
+Route::get('/unsubscription/{token}', 'UnsubscriptionController');

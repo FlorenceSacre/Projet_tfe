@@ -10,9 +10,11 @@
     "require": {
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "^6.2",
+        "laravel/framework": "^6.17",
         "laravel/tinker": "^2.0",
-        "laravelcollective/html": "^6.0"
+        "laravelcollective/html": "^6.0",
+        "php-http/curl-client": "^2.1",
+        "stripe/stripe-php": "^7.25"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
