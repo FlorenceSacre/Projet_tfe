@@ -19,6 +19,6 @@ class Provider extends Model
         return $this->hasMany(CategoryVideo::class);
     }
     public function Subscription() {
-        return $this->hasMany(Subscription::class);
+        return $this->hasMany(Subscriptions::class);
     }
 }

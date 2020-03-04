@@ -80,8 +80,8 @@
                     <nav>
                         <ul>
                             <li><a href="{{URL('../login')}}">Connexion</a></li>
-                            <li><a href="{{URL('../register')}}">Inscription</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <!--<li><a href="{{URL('../register')}}">Inscription</a></li>-->
+                            <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
                         </ul>
                     </nav>
                 </div>
