@@ -7,7 +7,7 @@
             <div class="panel-heading">Modification d'un utilisateur</div>
             <div class="panel-body">
                 <div class="col-sm-12">
-                    {!! Form::model($user, ['route' => ['user.update', $user->id], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
+                    {!! Form::model($user, ['route' => ['user', $user->id], 'method' => 'put', 'class' => 'form-horizontal panel']) !!}
                     <div class="form-group {!! $errors->has('username') ? 'has-error' : '' !!}">
                         {!! Form::text('username', null, ['class' => 'form-control', 'placeholder' => 'Pseudo']) !!}
                         {!! $errors->first('username', '<small class="help-block">:message</small>') !!}

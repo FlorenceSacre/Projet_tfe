@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('home_dashboard') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -78,6 +78,11 @@
                     @endauth
                 </div>
             @endif
+                @extends('layouts.app')
+
+                @section('content')
+                    <custom-button></custom-button>
+                @endsection
 
             <div class="content">
                 <div class="title m-b-md">

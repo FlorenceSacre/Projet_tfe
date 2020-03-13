@@ -11,22 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
-Route::resource('home','HomeController');
+Route::get('home', 'HomeController@index')->name('home');
 
 Route::resource('video','VideoController');
 
 Route::resource('voyage','VoyageController');
 
 Auth::routes();
-//Route::get('/connexion', 'ConnexionController@index')->name('connexion');
 Route::get('email', 'EmailController@getForm');
 Route::post('email', ['uses' => 'EmailController@postForm', 'as' => 'storeEmail']);
 
-Route::resource('user', 'UserController');
+//Route::get('user', 'UserController@index')->name('user');
+//Route::resource('/user', 'UserController');
 
 Route::get('/subscribe', function() {
     return view('subscribe.index');
@@ -35,3 +35,6 @@ Route::post('/subscription', 'SubscriptionController');
 Route::get('emails.new-subscribe');
 
 Route::get('/unsubscription/{token}', 'UnsubscriptionController');
+
+
+Route::resource('/user', 'UserController');

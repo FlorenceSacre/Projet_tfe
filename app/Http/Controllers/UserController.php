@@ -7,11 +7,17 @@ use App\Http\Requests\UserUpdateRequest;
 
 use App\Repositories\UserRepository;
 
-use Illuminate\Http\Request;
-
 class UserController extends Controller
 {
 
+ //   public function __invoke()
+ //   {
+//        request()->validate([
+//            'name' => ['required'],
+//            'email' => ['required', 'email'],
+//            'password' => ['required'],
+//        ]);
+//    }
     protected $userRepository;
 
     protected $nbrPerPage = 4;
@@ -23,6 +29,7 @@ class UserController extends Controller
 
     public function index()
     {
+        //dd(Gate::allows('isAdmin'));
         $users = $this->userRepository->getPaginate($this->nbrPerPage);
         $links = $users->render();
 
@@ -59,7 +66,7 @@ class UserController extends Controller
     {
         $this->userRepository->update($id, $request->all());
 
-        return redirect('user')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
+        return redirect('user')->withOk("L'utilisateur " . $request->input('firstname') . " a été modifié.");
     }
 
     public function destroy($id)
@@ -68,5 +75,4 @@ class UserController extends Controller
 
         return redirect()->back();
     }
-
 }

@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Http\Requests\Request;
+use Illuminate\Foundation\Http\FormRequest;
 
-class UserUpdateRequest extends Request
+class UserUpdateRequest extends FormRequest
 {
 
     public function authorize()
@@ -16,8 +16,8 @@ class UserUpdateRequest extends Request
     {
         $id = $this->user;
         return [
-            'name' => 'required|max:255|unique:users,name,' . $id,
-            'email' => 'required|email|max:255|unique:users,email,' . $id
+            'name' => 'required|max:255|unique:user,name,' . $id,
+            'email' => 'required|email|max:255|unique:user,email,' . $id
         ];
     }
 
