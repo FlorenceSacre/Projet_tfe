@@ -40,11 +40,7 @@ Route::post('/login/custom', [
     'uses' => 'LoginController@login',
     'as' => 'login.custom'
 ]);
-Route::group(['middleware' => 'guest'], function () {
-    Route::get('home', function () {
-        return view('home');
-    });
-});
+
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
     Route::get('/user', 'UserController@index')->name('user');
 });
