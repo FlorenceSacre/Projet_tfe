@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Models\Subscription;
+//use App\Models\Subscription;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -18,7 +18,7 @@ class User extends Authenticatable
      */
     protected $table = 'users';
     protected $fillable = [
-        'username', 'lastname', 'firstname', 'gender', 'birthday', 'postal_code', 'city', 'country', 'email', 'password', 'role', 'admin',
+        'name', 'email', 'password'
         ];
 
     /**
@@ -45,7 +45,13 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = bcrypt($password);
     }
-    public function subscription() {
-        return $this->belongsTo(Subscription::class);
+//    public function subscription() {
+//        return $this->belongsTo(Subscription::class);
+//    }
+    public function is_admin() {
+        if($this->admin) {
+            return true;
+        }
+        return false;
     }
 }
