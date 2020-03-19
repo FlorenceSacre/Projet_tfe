@@ -36,11 +36,12 @@ Route::post('/subscription', 'SubscriptionController');
 Route::get('emails.new-subscribe');
 Route::get('/unsubscription/{token}', 'UnsubscriptionController');
 
-Route::post('/login/custom', [
-    'uses' => 'LoginController@login',
-    'as' => 'login.custom'
-]);
+Route::post('login', 'Auth\LoginController@authenticated');
+//
+//Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
+//    Route::get('/user', 'UserController@index')->name('user');
+//});
 
-Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function () {
-    Route::get('/user', 'UserController@index')->name('user');
-});
+//Route::get('admin-login', 'Auth\AdminLoginController@showLoginForm');
+
+//Route::post('admin-login', ['as'=>'admin-login','uses'=>'Auth\AdminLoginController@login']);

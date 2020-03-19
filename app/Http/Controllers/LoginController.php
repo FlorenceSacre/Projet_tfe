@@ -20,19 +20,19 @@ class LoginController extends Controller
 //            return redirect()->route('home');
 //        }
 //    }
-    public function login(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required',
-            // If you are logging in the user via email, change the username to email
-            'password'  => 'required'
-        ]);
-
-        if(! Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Invalid credentials
-            return redirect()->route('home');
-        }
-        return redirect()->route('user');
-        // Else, the user has been logged in. Do as you wish.
-    }
+//    public function login(Request $request)
+//    {
+//        $this->validate($request, [
+//            'email' => 'required',
+//            // If you are logging in the user via email, change the username to email
+//            'password'  => 'required'
+//        ]);
+//
+//        if(! Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+//            // Invalid credentials
+//            return redirect()->route('home');
+//        }
+//        return redirect()->route('user');
+//        // Else, the user has been logged in. Do as you wish.
+//    }
 }

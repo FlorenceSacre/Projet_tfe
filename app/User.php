@@ -6,10 +6,18 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
     use Notifiable;
+
+    static $rules = [
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+    ];
+
 
     /**
      * The attributes that are mass assignable.
@@ -49,7 +57,8 @@ class User extends Authenticatable
 //        return $this->belongsTo(Subscription::class);
 //    }
     public function is_admin() {
-        if($this->admin) {
+        $user = Auth::user();
+        if($user->admin) {
             return true;
         }
         return false;

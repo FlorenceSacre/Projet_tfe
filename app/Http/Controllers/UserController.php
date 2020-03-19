@@ -10,14 +10,14 @@ use App\Repositories\UserRepository;
 class UserController extends Controller
 {
 
- //   public function __invoke()
- //   {
-//        request()->validate([
-//            'name' => ['required'],
-//            'email' => ['required', 'email'],
-//            'password' => ['required'],
-//        ]);
-//    }
+    public function __invoke()
+    {
+        request()->validate([
+            'name' => ['required'],
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+    }
     protected $userRepository;
 
     protected $nbrPerPage = 4;
