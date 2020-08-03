@@ -16,17 +16,14 @@ class CreateVideoTable extends Migration
         Schema::create('video', function (Blueprint $table) {
             $table->bigIncrements('id'); //primary key
             $table->string('titre');
-            $table->text('description');
-            $table->string('resolution');
-            $table->string('format_video');
-            $table->string('frame_rate');
-            $table->string('taille');
-            $table->string('ratio_video');
-            $table->string('time')->nullable();
+            $table->enum('categorie',['paysage','animaux','urbex','hiver']);
+            $table->string('videoBQ');
+            $table->string('videoHQ');
+            $table->string('image');
 
-            $table->bigInteger('subscription_id')
-                ->unsigned()
-                ->index();
+//            $table->bigInteger('images_id')
+//                ->unsigned()
+//                ->index();
         });
     }
 

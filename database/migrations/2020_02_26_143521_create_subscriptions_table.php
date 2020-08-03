@@ -16,15 +16,13 @@ class CreateSubscriptionsTable extends Migration
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->bigIncrements('id')->unique(); //primary key
             $table->string('stripe_id');
-            $table->string('email');
-            $table->string('name');
             $table->unsignedInteger('amount');
-            $table->string('street');
-            $table->string('postcode');
-            $table->string('city');
-            $table->string('country');
             $table->string('unsubscription_token')->unique();
             $table->timestamps();
+
+            $table->bigInteger('users_id')
+                  ->unsigned()
+                  ->index();
         });
     }
 

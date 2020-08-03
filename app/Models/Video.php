@@ -13,6 +13,6 @@ class video extends Model
     protected $guarded = [];
 
     protected $fillable = [
-        'titre', 'description', 'resolution', 'format_video', 'frame_rate', 'taille', 'ratio_video', 'time'
+        'id','titre', 'video','image'
     ];
 }

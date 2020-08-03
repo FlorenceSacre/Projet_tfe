@@ -21,11 +21,6 @@
                     <span>12€/mois</span>
                 </label>
                 <input type="radio" name="amount" value="12" id="12" required {{old('amount') === '12' ? 'checked' : ''}} />
-                <label for="25">
-                    <span>25€/mois</span>
-                </label>
-                <input type="radio" name="amount" value="25" id="25" required {{old('amount') === '25' ? 'checked' : ''}} />
-            </div>
             <div class="form-row">
                 <label for="card-element">
                     Carte bancaire
@@ -39,10 +34,6 @@
                     <div>
                         <label for="name">Nom</label>
                         <input type="text" name="name" value="{{old('name')}}" placeholder="Nom prénom">
-                    </div>
-                    <div>
-                        <label for="email">Email</label>
-                        <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org">
                     </div>
                     <div>
                         <label for="street">Adresse de facturation</label>
@@ -60,8 +51,18 @@
                         <label for="country">Country</label>
                         <input type="text" name="country" id="country" value="{{old('country')}}" placeholder="Belgique" />
                     </div>
+
                     <div>
-                        <p>Annulable à tout moment en un clic</p>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" value="{{old('email')}}" placeholder="exemple@exemple.org">
+                    </div>
+
+                    <div>
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" value="{{old('password')}}">
+                    </div>
+                    <div>
+                        {{--<p>Annulable à tout moment en un clic</p>--}}
                     </div>
                 </div>
             </div>

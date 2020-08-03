@@ -1,126 +1,92 @@
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <meta name="author" content="Florence Sacré" />
-        <meta name="copyright" content="©2020 Florence Sacré" />
-        <meta name="description" content="Travail de fin d'étude de Florence Sacré" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="keywords" content="TFE, EICVN, Design, Développement, Web, Florence Sacré, ecommerce, vidéo" />
-        <title>Video | Florence Sacré</title>
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/reset.css')}}">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+<link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css"/>
+@extends('style.style')
 
-
-        <!-- Grille -->
-        <link rel="stylesheet" type="text/css" href="{{asset('css/hugrid.css')}}" />
-        <script type="text/javascript" src="{{asset('javascript/jquery-1.6.2.min.js')}}"></script>
-        <script type="text/javascript" src="{{asset('javascript/hugrid.js')}}"></script>
-        <script type="text/javascript">
-            definegrid = function() {
-                var browserWidth = $(window).width();
-                if (browserWidth >= 1000)
-                {
-                    pageUnits = 'px';
-                    colUnits = 'px';
-                    pagewidth = 965;
-                    columns = 9;
-                    columnwidth = 85;
-                    gutterwidth = 25;
-                    pagetopmargin = 0;
-                    rowheight = 25;
-                    gridonload = 'off';
-                    makehugrid();
-                }
-                if (browserWidth <= 768)
-                {
-                    pageUnits = 'px';
-                    colUnits = 'px';
-                    pagewidth = 605;
-                    columns = 6;
-                    columnwidth = 80;
-                    gutterwidth = 25;
-                    pagetopmargin = 0;
-                    rowheight = 25;
-                    gridonload = 'off';
-                    makehugrid();
-                }
-                if (browserWidth <= 400)
-                {
-                    pageUnits = 'px';
-                    colUnits = 'px';
-                    pagewidth = 319;
-                    columns = 2;
-                    columnwidth = 147;
-                    gutterwidth = 25;
-                    pagetopmargin = 0;
-                    rowheight = 25;
-                    gridonload = 'off';
-                    makehugrid();
-                }
-            };
-            $(document).ready(function() {
-                definegrid();
-                setgridonload();
-            });
-            $(window).resize(function() {
-                definegrid();
-                setgridonresize();
-            });
-        </script>
-    </head>
+@section('content')
     <body class="video">
-        <div class="container-lg">
+        <div class="container">
             <header>
                 <div id="topbar">
-                    <!--<h1 id="logo-florence-sacré"><a href="index.html">Florence Sacré</a></h1>-->
+                    <h1 id="logo-florence-sacré"><a href="{{URL('home')}}">e-play</a></h1>
                     <nav>
                         <ul>
-                            <li><a href="{{URL::to('/login')}}">Connexion</a></li>
-                            <li><a href="{{URL::to('/register')}}">Inscription</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="{{URL('../login')}}">Connexion</a></li>
+                            <li><a href="{{URL('../subscribe')}}">S'abonner</a></li>
+                            @if(Auth::user())
+                                {{--<li><a href="{{route('logout')}}">@php $user = Auth::user()->name;--}}
+                                {{--echo $user; @endphp</a></li>--}}
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @else
+                                <li><a>@php echo 'Visiteur'; @endphp</a></li>
+                            @endif
                         </ul>
                     </nav>
                 </div>
             </header>
             <div id="content">
-                <iframe src="https://player.vimeo.com/video/327966481"></iframe>
-                <section id="informations">
-                    <p>Titre : Jelly-o candy dragée</p>
-                    <p class="description">Description : Jelly-o candy dragée powder donut caramels dessert danish sesame snaps. Wafer croissant muffin marzipan gummi bears. Caramels chupa chups dessert ice cream oat cake. Liquorice marzipan pie. Topping cupcake cake tootsie roll caramels candy canes dragée apple pie tootsie roll.</p>
-                    <p>Durée : 02:10</p>
-                    <p>Résolution : 720 * 480</p>
-                    <p>Taille : 30 MB</p>
-                    <p>Ratio vidéo : 16/9</p>
-                    <p>Format : MP4</p>
-                    <p>Frame Rate : 30 fps</p>
+                <section>
+                    @if(!Auth::user())
+                        <figure>
+                            <img src="{{asset($v->image)}}" width="600px" />
+                            <figcaption>Pour voir ce contenu, abonnez-vous</figcaption>
+                            <a href="{{URL('../subscribe')}}"><button type="button">Abonnez-vous</button></a>
+                        </figure>
+                        <h3>{{$v->titre}}</h3>
+                        <h3>{{$v->categorie}}</h3>
+                        <a href="#">Retour à la page précédente</a>
+                    @endif
 
-                    <?php
-                    $titre = DB::table('video')->select(DB::raw('titre'))->where('id_video', 1)->get();
-                    echo $titre . "<br />";
-                    $description = DB::table('video')->select(DB::raw('description'))->where('id_video', 1)->get();
-                    echo $description . "<br />";
-                    $resolution = DB::table('video')->select(DB::raw('resolution'))->where('id_video', 1)->get();
-                    echo $resolution . "<br />";
-                    $format_video = DB::table('video')->select(DB::raw('format_video'))->where('id_video', 1)->get();
-                    echo $format_video . "<br />";
-                    $frame_rate = DB::table('video')->select(DB::raw('frame_rate'))->where('id_video', 1)->get();
-                    echo $frame_rate . "<br />";
-                    $taille = DB::table('video')->select(DB::raw('taille'))->where('id_video', 1)->get();
-                    echo $taille . "<br />";
-                    $ratio_video = DB::table('video')->select(DB::raw('ratio_video'))->where('id_video', 1)->get();
-                    echo $ratio_video . "<br />";
-                    $video = DB::table('video')->select(DB::raw('video'))->where('id_video', 1)->get();
-                    echo $video;
-                    ?>
-                </section>
-                <section id="download">
-                    <a href="#">Téléchargement</a>
+                    @can('isCustomer')
+                        <video controls width="800">
+                            <source src="{{asset($v->videoBQ)}}" type="video/mp4">
+                        </video>
+                        <h3>{{$v->titre}}</h3>
+                        <h3>{{$v->categorie}}</h3>
+                        <br /><br /><br /><br /><br />
+                        <h3>Vous aimerez aussi</h3>
+                        <?php
+                        $videos = DB::table('video')->get(); ?>
+                        @foreach ($videos as $video)
+                            <video controls width="300">
+                                <source src="{{asset($video->videoBQ)}}" type="video/mp4">
+                            </video>
+                        @endforeach
+                        <br /><br /><a href="#">Retour à la page précédente</a>
+                    @endcan
+
+                    @can('isSubscriber')
+                        <video controls width="800">
+                            <source src="{{asset($v->videoHQ)}}" type="video/mp4">
+                        </video>
+                        <h3>{{$v->titre}}</h3>
+                        <h3>{{$v->categorie}}</h3>
+                        <br /><br /><br /><br /><br />
+                        <h3>Vous aimerez aussi</h3>
+                        <?php
+                        $videos = DB::table('video')->get(); ?>
+                        @foreach ($videos as $video)
+                            <video controls width="300">
+                                <source src="{{asset($video->videoHQ)}}" type="video/mp4">
+                            </video>
+                        @endforeach
+
+                        <br /><br /><a href="#">Retour à la page précédente</a>
+                    @endcan
                 </section>
             </div><!-- end content -->
         </div><!-- end container -->
     </body>
-</html>
+    @endsection

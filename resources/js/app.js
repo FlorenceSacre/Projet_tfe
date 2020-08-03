@@ -5,8 +5,8 @@
  */
 
 require('./bootstrap');
-import SuiVue from 'semantic-ui-vue';
-import 'semantic-ui-css/semantic.min.css';
+// import SuiVue from 'semantic-ui-vue';
+// import 'semantic-ui-css/semantic.min.css';
 
 window.Vue = require('vue');
 
