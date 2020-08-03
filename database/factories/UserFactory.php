@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
+//use App\Models\Subscription;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -36,17 +37,11 @@ $factory->define(User::class, function (Faker $faker) {
 //        'remember_token' => Str::random(10),
 //        'created_at' => now(),
 //        'updated_at' => now(),
-//        'subscription_id' => $faker->randomElement($subscription),
-    $role = ['customer', 'subscriber'];
+//        //'subscription_id' => $faker->randomElement($subscription),
     return [
         'name' => $faker->Name,
-        'street' => $faker->streetAddress,
-        'postcode' => $faker->postcode,
-        'city' => $faker->city,
-        'country'=> $faker->country,
         'email' => $faker->unique()->safeEmail,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
-        'role' => $faker->randomElement($role),
         'remember_token' => Str::random(10),
         'created_at' => now(),
         'updated_at' => now(),
